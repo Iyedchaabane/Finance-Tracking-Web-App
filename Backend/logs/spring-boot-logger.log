@@ -1,0 +1,151 @@
+2025-12-19 00:03:18,838 INFO o.a.j.l.DirectJDKLog [http-nio-8080-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-12-19 00:03:18,842 INFO o.s.w.s.FrameworkServlet [http-nio-8080-exec-1] Initializing Servlet 'dispatcherServlet'
+2025-12-19 00:03:18,845 INFO o.s.w.s.FrameworkServlet [http-nio-8080-exec-1] Completed initialization in 1 ms
+2025-12-19 00:03:19,057 INFO c.f.b.s.AuthService [http-nio-8080-exec-2] Registering user: cc@gmail.com
+2025-12-19 00:03:19,328 INFO c.f.b.s.AuthService [http-nio-8080-exec-2] User registered successfully: cc@gmail.com
+2025-12-19 00:03:28,129 INFO c.f.b.s.AuthService [http-nio-8080-exec-4] User logged in: cc@gmail.com
+2025-12-19 00:03:28,361 TRACE c.f.b.s.UserSettingsService [http-nio-8080-exec-4] Fetching settings for user: cc@gmail.com
+2025-12-19 00:30:24,136 WARN c.z.h.p.HikariPool$HouseKeeper [HikariPool-1 housekeeper] HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1m35s827ms869µs900ns).
+2025-12-19 14:18:06,028 INFO o.h.v.i.u.Version [background-preinit] HV000001: Hibernate Validator 8.0.1.Final
+2025-12-19 14:18:06,136 INFO o.s.b.StartupInfoLogger [main] Starting FinanceTrackerBackendApplication using Java 21.0.6 with PID 6216 (C:\Users\Iyed Chaabane\Desktop\workspace\Finance Tracking web app\Backend\target\classes started by Iyed Chaabane in C:\Users\Iyed Chaabane\Desktop\workspace\Finance Tracking web app\Backend)
+2025-12-19 14:18:06,137 DEBUG o.s.b.StartupInfoLogger [main] Running with Spring Boot v3.2.1, Spring v6.1.2
+2025-12-19 14:18:06,140 INFO o.s.b.SpringApplication [main] No active profile set, falling back to 1 default profile: "default"
+2025-12-19 14:18:07,724 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-12-19 14:18:07,843 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 104 ms. Found 4 JPA repository interfaces.
+2025-12-19 14:18:08,733 INFO o.s.b.w.e.t.TomcatWebServer [main] Tomcat initialized with port 8080 (http)
+2025-12-19 14:18:08,758 INFO o.a.j.l.DirectJDKLog [main] Initializing ProtocolHandler ["http-nio-8080"]
+2025-12-19 14:18:08,767 INFO o.a.j.l.DirectJDKLog [main] Starting service [Tomcat]
+2025-12-19 14:18:08,767 INFO o.a.j.l.DirectJDKLog [main] Starting Servlet engine: [Apache Tomcat/10.1.17]
+2025-12-19 14:18:08,889 INFO o.a.j.l.DirectJDKLog [main] Initializing Spring embedded WebApplicationContext
+2025-12-19 14:18:08,895 INFO o.s.b.w.s.c.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 2645 ms
+2025-12-19 14:18:09,089 INFO o.h.j.i.u.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-12-19 14:18:09,204 INFO o.h.Version [main] HHH000412: Hibernate ORM core version 6.4.1.Final
+2025-12-19 14:18:09,266 INFO o.h.c.i.RegionFactoryInitiator [main] HHH000026: Second-level cache disabled
+2025-12-19 14:18:09,716 INFO o.s.o.j.p.SpringPersistenceUnitInfo [main] No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-12-19 14:18:09,766 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Starting...
+2025-12-19 14:18:10,154 INFO c.z.h.p.HikariPool [main] HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@f48a080
+2025-12-19 14:18:10,158 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Start completed.
+2025-12-19 14:18:10,268 WARN o.h.e.j.d.i.DialectFactoryImpl [main] HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-12-19 14:18:11,822 INFO o.h.e.t.j.p.i.JtaPlatformInitiator [main] HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-12-19 14:18:12,051 INFO o.s.o.j.AbstractEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-12-19 14:18:12,679 DEBUG o.s.w.f.GenericFilterBean [main] Filter 'authenticationJwtTokenFilter' configured for use
+2025-12-19 14:18:13,155 INFO o.s.d.j.r.q.QueryEnhancerFactory [main] Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-12-19 14:18:14,081 WARN o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-12-19 14:18:14,457 INFO o.s.s.w.DefaultSecurityFilterChain [main] Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@165a78d4, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@139862ca, org.springframework.security.web.context.SecurityContextHolderFilter@4c04188, org.springframework.security.web.header.HeaderWriterFilter@575a6540, org.springframework.web.filter.CorsFilter@7dbe9654, org.springframework.security.web.authentication.logout.LogoutFilter@75364777, com.financetracker.backend.security.JwtAuthenticationFilter@4a00d591, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@7a1148f2, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@641bd93e, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@31fd3db2, org.springframework.security.web.session.SessionManagementFilter@2b3b25ad, org.springframework.security.web.access.ExceptionTranslationFilter@10ec54c3, org.springframework.security.web.access.intercept.AuthorizationFilter@5d3b0f8a]
+2025-12-19 14:18:14,842 INFO o.a.j.l.DirectJDKLog [main] Starting ProtocolHandler ["http-nio-8080"]
+2025-12-19 14:18:14,871 INFO o.s.b.w.e.t.TomcatWebServer [main] Tomcat started on port 8080 (http) with context path ''
+2025-12-19 14:18:14,885 INFO o.s.b.StartupInfoLogger [main] Started FinanceTrackerBackendApplication in 9.832 seconds (process running for 10.613)
+2025-12-19 14:19:31,153 INFO o.a.j.l.DirectJDKLog [http-nio-8080-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-12-19 14:19:31,154 INFO o.s.w.s.FrameworkServlet [http-nio-8080-exec-1] Initializing Servlet 'dispatcherServlet'
+2025-12-19 14:19:31,155 INFO o.s.w.s.FrameworkServlet [http-nio-8080-exec-1] Completed initialization in 1 ms
+2025-12-19 14:19:31,808 INFO c.f.b.s.AuthService [http-nio-8080-exec-2] User logged in: chaabaneiyed@gmail.com
+2025-12-19 14:19:32,010 TRACE c.f.b.s.UserSettingsService [http-nio-8080-exec-8] Fetching settings for user: chaabaneiyed@gmail.com
+2025-12-19 14:20:40,615 INFO o.s.o.j.AbstractEntityManagerFactoryBean [SpringApplicationShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-12-19 14:20:40,622 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown initiated...
+2025-12-19 14:20:40,632 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown completed.
+2025-12-19 14:20:52,543 INFO o.h.v.i.u.Version [background-preinit] HV000001: Hibernate Validator 8.0.1.Final
+2025-12-19 14:20:52,655 INFO o.s.b.StartupInfoLogger [main] Starting FinanceTrackerBackendApplication using Java 21.0.6 with PID 6712 (C:\Users\Iyed Chaabane\Desktop\workspace\Finance Tracking web app\Backend\target\classes started by Iyed Chaabane in C:\Users\Iyed Chaabane\Desktop\workspace\Finance Tracking web app\Backend)
+2025-12-19 14:20:52,656 DEBUG o.s.b.StartupInfoLogger [main] Running with Spring Boot v3.2.1, Spring v6.1.2
+2025-12-19 14:20:52,658 INFO o.s.b.SpringApplication [main] No active profile set, falling back to 1 default profile: "default"
+2025-12-19 14:20:54,223 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-12-19 14:20:54,326 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 85 ms. Found 4 JPA repository interfaces.
+2025-12-19 14:20:55,016 INFO o.s.b.w.e.t.TomcatWebServer [main] Tomcat initialized with port 8080 (http)
+2025-12-19 14:20:55,031 INFO o.a.j.l.DirectJDKLog [main] Initializing ProtocolHandler ["http-nio-8080"]
+2025-12-19 14:20:55,035 INFO o.a.j.l.DirectJDKLog [main] Starting service [Tomcat]
+2025-12-19 14:20:55,036 INFO o.a.j.l.DirectJDKLog [main] Starting Servlet engine: [Apache Tomcat/10.1.17]
+2025-12-19 14:20:55,125 INFO o.a.j.l.DirectJDKLog [main] Initializing Spring embedded WebApplicationContext
+2025-12-19 14:20:55,127 INFO o.s.b.w.s.c.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 2374 ms
+2025-12-19 14:20:55,280 INFO o.h.j.i.u.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-12-19 14:20:55,454 INFO o.h.Version [main] HHH000412: Hibernate ORM core version 6.4.1.Final
+2025-12-19 14:20:55,520 INFO o.h.c.i.RegionFactoryInitiator [main] HHH000026: Second-level cache disabled
+2025-12-19 14:20:55,980 INFO o.s.o.j.p.SpringPersistenceUnitInfo [main] No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-12-19 14:20:56,013 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Starting...
+2025-12-19 14:20:56,212 INFO c.z.h.p.HikariPool [main] HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@311a0b3e
+2025-12-19 14:20:56,216 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Start completed.
+2025-12-19 14:20:56,251 WARN o.h.e.j.d.i.DialectFactoryImpl [main] HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-12-19 14:20:57,624 INFO o.h.e.t.j.p.i.JtaPlatformInitiator [main] HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-12-19 14:20:58,578 INFO o.s.o.j.AbstractEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-12-19 14:20:59,106 DEBUG o.s.w.f.GenericFilterBean [main] Filter 'authenticationJwtTokenFilter' configured for use
+2025-12-19 14:20:59,369 INFO o.s.d.j.r.q.QueryEnhancerFactory [main] Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-12-19 14:21:00,269 WARN o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-12-19 14:21:00,703 INFO o.s.s.w.DefaultSecurityFilterChain [main] Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@42a940dc, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@4619e076, org.springframework.security.web.context.SecurityContextHolderFilter@62325b44, org.springframework.security.web.header.HeaderWriterFilter@4a89722e, org.springframework.web.filter.CorsFilter@26abee34, org.springframework.security.web.authentication.logout.LogoutFilter@520f1862, com.financetracker.backend.security.JwtAuthenticationFilter@13b5598b, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@f511a8e, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@421f447f, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@74aa29c7, org.springframework.security.web.session.SessionManagementFilter@35f34ccc, org.springframework.security.web.access.ExceptionTranslationFilter@4fa2991, org.springframework.security.web.access.intercept.AuthorizationFilter@3c971473]
+2025-12-19 14:21:01,323 INFO o.a.j.l.DirectJDKLog [main] Starting ProtocolHandler ["http-nio-8080"]
+2025-12-19 14:21:01,357 INFO o.s.b.w.e.t.TomcatWebServer [main] Tomcat started on port 8080 (http) with context path ''
+2025-12-19 14:21:01,379 INFO o.s.b.StartupInfoLogger [main] Started FinanceTrackerBackendApplication in 9.502 seconds (process running for 10.034)
+2025-12-19 14:21:13,597 INFO o.s.o.j.AbstractEntityManagerFactoryBean [SpringApplicationShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-12-19 14:21:13,601 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown initiated...
+2025-12-19 14:21:13,614 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown completed.
+2025-12-19 14:21:27,569 INFO o.h.v.i.u.Version [background-preinit] HV000001: Hibernate Validator 8.0.1.Final
+2025-12-19 14:21:27,662 INFO o.s.b.StartupInfoLogger [main] Starting FinanceTrackerBackendApplication using Java 21.0.6 with PID 13636 (C:\Users\Iyed Chaabane\Desktop\workspace\Finance Tracking web app\Backend\target\classes started by Iyed Chaabane in C:\Users\Iyed Chaabane\Desktop\workspace\Finance Tracking web app\Backend)
+2025-12-19 14:21:27,663 DEBUG o.s.b.StartupInfoLogger [main] Running with Spring Boot v3.2.1, Spring v6.1.2
+2025-12-19 14:21:27,665 INFO o.s.b.SpringApplication [main] No active profile set, falling back to 1 default profile: "default"
+2025-12-19 14:21:29,570 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-12-19 14:21:29,696 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 110 ms. Found 4 JPA repository interfaces.
+2025-12-19 14:21:30,904 INFO o.s.b.w.e.t.TomcatWebServer [main] Tomcat initialized with port 8080 (http)
+2025-12-19 14:21:30,935 INFO o.a.j.l.DirectJDKLog [main] Initializing ProtocolHandler ["http-nio-8080"]
+2025-12-19 14:21:30,942 INFO o.a.j.l.DirectJDKLog [main] Starting service [Tomcat]
+2025-12-19 14:21:30,943 INFO o.a.j.l.DirectJDKLog [main] Starting Servlet engine: [Apache Tomcat/10.1.17]
+2025-12-19 14:21:31,112 INFO o.a.j.l.DirectJDKLog [main] Initializing Spring embedded WebApplicationContext
+2025-12-19 14:21:31,119 INFO o.s.b.w.s.c.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 3343 ms
+2025-12-19 14:21:31,377 INFO o.h.j.i.u.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-12-19 14:21:31,506 INFO o.h.Version [main] HHH000412: Hibernate ORM core version 6.4.1.Final
+2025-12-19 14:21:31,596 INFO o.h.c.i.RegionFactoryInitiator [main] HHH000026: Second-level cache disabled
+2025-12-19 14:21:32,193 INFO o.s.o.j.p.SpringPersistenceUnitInfo [main] No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-12-19 14:21:32,250 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Starting...
+2025-12-19 14:21:32,624 INFO c.z.h.p.HikariPool [main] HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@277bc3a5
+2025-12-19 14:21:32,629 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Start completed.
+2025-12-19 14:21:32,729 WARN o.h.e.j.d.i.DialectFactoryImpl [main] HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-12-19 14:21:34,521 INFO o.h.e.t.j.p.i.JtaPlatformInitiator [main] HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-12-19 14:21:34,663 INFO o.s.o.j.AbstractEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-12-19 14:21:35,166 DEBUG o.s.w.f.GenericFilterBean [main] Filter 'authenticationJwtTokenFilter' configured for use
+2025-12-19 14:21:35,358 INFO o.s.d.j.r.q.QueryEnhancerFactory [main] Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-12-19 14:21:36,101 WARN o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-12-19 14:21:36,405 INFO o.s.s.w.DefaultSecurityFilterChain [main] Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@165a78d4, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@139862ca, org.springframework.security.web.context.SecurityContextHolderFilter@4c04188, org.springframework.security.web.header.HeaderWriterFilter@575a6540, org.springframework.web.filter.CorsFilter@7dbe9654, org.springframework.security.web.authentication.logout.LogoutFilter@75364777, com.financetracker.backend.security.JwtAuthenticationFilter@2bd158ea, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@7a1148f2, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@641bd93e, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@31fd3db2, org.springframework.security.web.session.SessionManagementFilter@2b3b25ad, org.springframework.security.web.access.ExceptionTranslationFilter@10ec54c3, org.springframework.security.web.access.intercept.AuthorizationFilter@5d3b0f8a]
+2025-12-19 14:21:36,725 INFO o.a.j.l.DirectJDKLog [main] Starting ProtocolHandler ["http-nio-8080"]
+2025-12-19 14:21:36,750 INFO o.s.b.w.e.t.TomcatWebServer [main] Tomcat started on port 8080 (http) with context path ''
+2025-12-19 14:21:36,762 INFO o.s.b.StartupInfoLogger [main] Started FinanceTrackerBackendApplication in 10.316 seconds (process running for 11.235)
+2025-12-19 14:22:18,875 INFO o.a.j.l.DirectJDKLog [http-nio-8080-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-12-19 14:22:18,875 INFO o.s.w.s.FrameworkServlet [http-nio-8080-exec-1] Initializing Servlet 'dispatcherServlet'
+2025-12-19 14:22:18,877 INFO o.s.w.s.FrameworkServlet [http-nio-8080-exec-1] Completed initialization in 2 ms
+2025-12-19 14:23:01,643 INFO c.f.b.s.AuthService [http-nio-8080-exec-4] Registering user: chaabaneiyed@gmail.com
+2025-12-19 14:23:01,816 INFO c.f.b.s.AuthService [http-nio-8080-exec-4] User registered successfully: chaabaneiyed@gmail.com
+2025-12-19 14:23:13,540 INFO c.f.b.s.AuthService [http-nio-8080-exec-6] User logged in: chaabaneiyed@gmail.com
+2025-12-19 14:23:13,734 TRACE c.f.b.s.UserSettingsService [http-nio-8080-exec-7] Fetching settings for user: chaabaneiyed@gmail.com
+2025-12-19 14:26:45,257 INFO c.f.b.s.CategoryService [http-nio-8080-exec-10] Category created with ID: 1
+2025-12-19 14:29:02,410 INFO c.f.b.s.CategoryService [http-nio-8080-exec-5] Category created with ID: 2
+2025-12-19 14:29:59,873 INFO c.f.b.s.CategoryService [http-nio-8080-exec-4] Category created with ID: 3
+2025-12-19 14:30:13,033 INFO c.f.b.s.CategoryService [http-nio-8080-exec-9] Category created with ID: 4
+2025-12-19 14:30:40,207 INFO c.f.b.s.CategoryService [http-nio-8080-exec-2] Category created with ID: 5
+2025-12-19 14:31:10,806 INFO c.f.b.s.CategoryService [http-nio-8080-exec-1] Category created with ID: 6
+2025-12-19 14:31:29,272 INFO c.f.b.s.CategoryService [http-nio-8080-exec-5] Category created with ID: 7
+2025-12-19 14:31:43,038 INFO c.f.b.s.CategoryService [http-nio-8080-exec-4] Category created with ID: 8
+2025-12-19 14:31:56,795 INFO c.f.b.s.CategoryService [http-nio-8080-exec-9] Category created with ID: 9
+2025-12-19 14:32:19,399 INFO c.f.b.s.CategoryService [http-nio-8080-exec-2] Category created with ID: 10
+2025-12-19 14:32:31,484 INFO c.f.b.s.CategoryService [http-nio-8080-exec-1] Creating system 'Archived Transactions' category for user chaabaneiyed@gmail.com
+2025-12-19 14:32:31,497 INFO c.f.b.s.CategoryService [http-nio-8080-exec-1] Category 9 soft-deleted. 0 transactions reassigned to archive.
+2025-12-19 14:32:45,731 INFO c.f.b.s.CategoryService [http-nio-8080-exec-5] Category created with ID: 12
+2025-12-19 14:32:55,877 INFO c.f.b.s.UserSettingsService [http-nio-8080-exec-4] Settings updated for user: chaabaneiyed@gmail.com
+2025-12-19 14:33:01,822 INFO c.f.b.s.UserSettingsService [http-nio-8080-exec-9] Settings updated for user: chaabaneiyed@gmail.com
+2025-12-19 14:33:36,993 INFO c.f.b.s.TransactionService [http-nio-8080-exec-8] Transaction created with ID: 1
+2025-12-19 14:35:04,249 INFO c.f.b.s.TransactionService [http-nio-8080-exec-3] Transaction created with ID: 2
+2025-12-19 14:35:36,585 INFO c.f.b.s.TransactionService [http-nio-8080-exec-5] Transaction created with ID: 3
+2025-12-19 14:36:30,920 INFO c.f.b.s.TransactionService [http-nio-8080-exec-4] Transaction created with ID: 4
+2025-12-19 14:37:05,337 INFO c.f.b.s.TransactionService [http-nio-8080-exec-9] Transaction created with ID: 5
+2025-12-19 14:37:39,300 INFO c.f.b.s.TransactionService [http-nio-8080-exec-8] Transaction created with ID: 6
+2025-12-19 14:38:03,484 INFO c.f.b.s.UserSettingsService [http-nio-8080-exec-8] Currency changed from EUR to TND for user chaabaneiyed@gmail.com. Converting transactions...
+2025-12-19 14:38:04,789 INFO c.f.b.s.UserSettingsService [http-nio-8080-exec-8] Converted 6 transactions from EUR to TND for user 1
+2025-12-19 14:38:04,810 INFO c.f.b.s.UserSettingsService [http-nio-8080-exec-8] Settings updated for user: chaabaneiyed@gmail.com
+2025-12-19 14:38:04,883 TRACE c.f.b.s.UserSettingsService [http-nio-8080-exec-3] Fetching settings for user: chaabaneiyed@gmail.com
+2025-12-19 14:38:37,046 INFO c.f.b.s.UserSettingsService [http-nio-8080-exec-5] Currency changed from TND to EUR for user chaabaneiyed@gmail.com. Converting transactions...
+2025-12-19 14:38:51,464 TRACE c.f.b.s.UserSettingsService [http-nio-8080-exec-6] Fetching settings for user: chaabaneiyed@gmail.com
+2025-12-19 14:38:51,566 TRACE c.f.b.s.UserSettingsService [http-nio-8080-exec-9] Fetching settings for user: chaabaneiyed@gmail.com
+2025-12-19 14:38:53,256 INFO c.f.b.s.UserSettingsService [http-nio-8080-exec-5] Converted 6 transactions from TND to EUR for user 1
+2025-12-19 14:38:53,259 INFO c.f.b.s.UserSettingsService [http-nio-8080-exec-5] Settings updated for user: chaabaneiyed@gmail.com
+2025-12-19 14:39:00,653 TRACE c.f.b.s.UserSettingsService [http-nio-8080-exec-9] Fetching settings for user: chaabaneiyed@gmail.com
+2025-12-19 14:39:30,866 TRACE c.f.b.s.UserSettingsService [http-nio-8080-exec-4] Fetching settings for user: chaabaneiyed@gmail.com
+2025-12-19 14:39:30,991 TRACE c.f.b.s.UserSettingsService [http-nio-8080-exec-8] Fetching settings for user: chaabaneiyed@gmail.com
+2025-12-19 14:39:45,918 INFO c.f.b.s.UserSettingsService [http-nio-8080-exec-10] Settings updated for user: chaabaneiyed@gmail.com
+2025-12-19 14:40:13,452 INFO c.f.b.s.UserSettingsService [http-nio-8080-exec-2] Settings updated for user: chaabaneiyed@gmail.com
+2025-12-19 14:41:44,791 INFO o.s.o.j.AbstractEntityManagerFactoryBean [SpringApplicationShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-12-19 14:41:44,798 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown initiated...
+2025-12-19 14:41:44,815 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown completed.
