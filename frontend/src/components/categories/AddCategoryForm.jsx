@@ -13,7 +13,7 @@ const AddCategoryForm = ({ onClose }) => {
         color: 'bg-gray-100 text-gray-600'
     });
 
-    const icons = ['💰', '🛒', '🚗', '🏠', '🎬', '💡', '🍽️', '🛍️', '💊', '📚', '🎁', '💻', '✈️', '🎮'];
+    const icons = ['💰', '🛒', '🚗', '🏠', '🎬', '💡', '🍽️', '🛍️', '💊', '📚', '🎁', '💻', '✈️', '🎮','🧰'];
     const colors = [
         { label: 'Red', value: 'bg-red-100 text-red-600' },
         { label: 'Green', value: 'bg-green-100 text-green-600' },
