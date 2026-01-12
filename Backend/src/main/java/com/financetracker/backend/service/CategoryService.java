@@ -40,7 +40,7 @@ public class CategoryService {
      */
     public List<CategoryDTO> getAllCategories() {
         User user = currentUserProvider.getCurrentUser();
-        return categoryRepository.findByUserIdAndIsDeletedFalse(user.getId()).stream()
+        return categoryRepository.findVisibleCategoriesForUser(user.getId()).stream()
                 .map(categoryMapper::toDto)
                 .collect(Collectors.toList());
     }
@@ -87,6 +87,7 @@ public class CategoryService {
                             .color("bg-gray-100 text-gray-600")
                             .type(category.getType())
                             .isDeleted(false)
+                            .isGlobal(false)
                             .build();
                     return categoryRepository.save(newCat);
                 });

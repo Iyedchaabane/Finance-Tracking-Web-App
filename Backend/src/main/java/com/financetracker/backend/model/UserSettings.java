@@ -1,6 +1,8 @@
 package com.financetracker.backend.model;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Pattern;
 import lombok.*;
 
 @Setter
@@ -40,8 +42,8 @@ public class UserSettings {
      * Currency code (e.g., "USD", "EUR").
      * Validated as a 3-letter uppercase ISO code.
      */
-    @jakarta.validation.constraints.NotNull
-    @jakarta.validation.constraints.Pattern(regexp = "^[A-Z]{3}$")
+    @NotNull
+    @Pattern(regexp = "^[A-Z]{3}$")
     @Builder.Default
     private String currency = "EUR";
 
@@ -49,8 +51,8 @@ public class UserSettings {
      * Language code (e.g., "en", "ar", "fr").
      * Normalized to lowercase for frontend consistency.
      */
-    @jakarta.validation.constraints.NotNull
-    @jakarta.validation.constraints.Pattern(regexp = "^[a-z]{2}$")
+    @NotNull
+    @Pattern(regexp = "^[a-z]{2}$")
     @Builder.Default
     private String language = "en";
 

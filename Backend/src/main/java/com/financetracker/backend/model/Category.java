@@ -34,4 +34,7 @@ public class Category {
 
     @Builder.Default
     private boolean isDeleted = false;
+
+    @Builder.Default
+    private boolean isGlobal = false;
 }
