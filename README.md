@@ -36,7 +36,7 @@ The system pairs a **React single-page application** with a **Spring Boot REST A
 
 | Light theme | Dark theme |
 | :---: | :---: |
-| ![FinTrack dashboard in light mode](docs/images/dashborad-light.png) | ![FinTrack dashboard in dark mode](docs/images/dashborad-dark.png) |
+| ![FinTrack dashboard in light mode](docs/images/dashborad-light-1.png) | ![FinTrack dashboard in dark mode](docs/images/dashborad-dark-1.png) |
 
 ### Categories and preferences
 
