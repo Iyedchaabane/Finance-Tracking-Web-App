@@ -1,104 +1,175 @@
-# Finance Tracking Web App
+<div align="center">💸 FinTrack — Finance Tracking Web App
+A full-stack personal finance dashboard for tracking income, expenses, spending trends, and everyday financial decisions.
 
-Welcome to the **Finance Tracking Web App**, a comprehensive solution for managing your personal finances. This application features a robust Spring Boot backend, a modern React frontend, and a PostgreSQL database.
+Built with React 19, Spring Boot 3, and PostgreSQL.
 
-## 🚀 Key Features
+Features · Screenshots · Architecture · Getting started · API
+</div>✨ Overview
+FinTrack brings day-to-day personal finance management into one responsive application. Record transactions, organize them into income and expense categories, understand trends through interactive charts, and personalize the experience with multiple currencies, languages, and themes.
 
-- **Personal Dashboard**: Track your income and expenses with interactive charts.
-- **Transaction Management**: Securely add, edit, and delete transactions.
-- **Category Support**: Organize your finances with customizable categories and soft-deletion protection.
-- **Multi-language & RTL**: Support for English, Arabic, and French, with automatic layout flipping for RTL languages.
-- **Currency Conversion**: Real-time currency conversion for global finance management.
+The system pairs a React single-page application with a Spring Boot REST API. User-specific records are stored in PostgreSQL, authentication uses JWT, and database schema changes are handled through Flyway migrations.
+🚀 Features
+Area	Capabilities
+Financial dashboard	Total balance, income and expenses, recent transactions, six-month income/expense trends, and category-based spending charts.
+Transactions	Create, view, update, and delete income or expense entries; paginated backend endpoint.
+Categories	Browse and create income/expense categories. Category deletion uses archival and reassignment behavior to protect transaction history.
+Account access	User registration, login, and JWT-protected API routes.
+Currencies	EUR, USD, TND, GBP, EGP, and SAR preferences in the current UI, backed by an exchange-rate API integration.
+Languages	English, French, and Arabic; right-to-left page direction for Arabic.
+Appearance	Light and dark themes with responsive layouts.
+Developer tooling	Swagger/OpenAPI documentation, Flyway migrations, and Docker Compose for local PostgreSQL.
 
----
 
-## 🏗️ Getting Started
+📸 Screenshots
+Screenshots are stored in docs/images/. They show example data for demonstration purposes.
 
-Follow these steps to set up and run the project locally.
+Dashboard — light and dark mode
+Light theme	Dark theme
+	
 
-### 1. Run Database (Docker)
 
-Ensure you have [Docker](https://www.docker.com/) installed and running.
+Categories and preferences
+Category management	User settings
+	
 
-```bash
-# Start the PostgreSQL database
-docker-compose up -d
+
+🏗️ Architecture
+```mermaid
+flowchart TB
+    User[User / Web Browser]
+    UI["React 19 + Vite\nTailwind CSS · Recharts · React Router"]
+    API["Spring Boot REST API\nControllers · DTOs · Validation"]
+    Security["Spring Security\nJWT authentication"]
+    Services["Business services\nTransactions · Categories · Dashboard · Settings"]
+    JPA["Spring Data JPA\nRepositories"]
+    DB[(PostgreSQL)]
+    FX["ExchangeRate-API\nCurrency conversion"]
+    Migration["Flyway\nSchema migrations"]
+
+    User --> UI
+    UI -->|HTTP / JSON| API
+    API --> Security
+    Security --> Services
+    Services --> JPA
+    JPA --> DB
+    Services -->|Exchange rates| FX
+    Migration -.->|Versioned schema| DB
 ```
+Request flow: The frontend calls REST endpoints through its API service. The backend authenticates requests, validates input, executes business logic, and persists user-specific financial records using JPA repositories. The dashboard exposes aggregated statistics for charts and summaries.
+Repository structure
+Finance-Tracking-Web-App/
+├── Backend/
+│   ├── pom.xml
+│   └── src/main/
+│       ├── java/com/financetracker/backend/
+│       │   ├── controller/       # REST endpoints
+│       │   ├── service/          # Business logic
+│       │   ├── repository/       # JPA persistence
+│       │   ├── model/            # Domain entities
+│       │   ├── dto/              # API data contracts
+│       │   ├── mapper/           # MapStruct mappings
+│       │   ├── security/         # JWT and request security
+│       │   ├── config/           # Application configuration
+│       │   └── exception/        # Centralized error handling
+│       └── resources/
+│           ├── application.yml
+│           └── db/migration/     # Flyway SQL migrations
+├── frontend/
+│   ├── package.json
+│   └── src/
+│       ├── components/
+│       ├── context/
+│       ├── pages/
+│       ├── services/
+│       └── utils/
+├── docs/images/                  # Local screenshots; add before publishing
+├── docker-compose.yml           # PostgreSQL for development
+└── README.md
+🛠️ Tech stack
+Layer	Technologies
+Frontend	React 19, JavaScript, Vite 7, React Router 7, Tailwind CSS 3, Recharts 3, Axios, Lucide React
+Backend	Java 21, Spring Boot 3.2.1, Spring Web, Spring Security, Spring Data JPA, Jakarta Validation
+Mapping and API docs	MapStruct, springdoc OpenAPI / Swagger UI
+Authentication	JWT (JJWT)
+Database	PostgreSQL, Flyway
+Local infrastructure	Docker Compose
+Backend testing dependencies	Spring Boot Starter Test, Spring Security Test
 
-### 2. Backend Setup (Java/Spring Boot)
 
-The backend is built with **Spring Boot 3.x** and **Java 21**.
+⚙️ Getting started
+Prerequisites
+- Java 21 and Maven
+- Node.js compatible with Vite 7 (Node.js 20.19+ or 22.12+) and npm
+- Docker and Docker Compose, or an independently running PostgreSQL instance
+- An ExchangeRate-API key for currency conversion
+1. Clone the repository
+git clone https://github.com/Iyedchaabane/Finance-Tracking-Web-App.git
+cd Finance-Tracking-Web-App
+2. Start PostgreSQL
+The provided Compose file starts PostgreSQL on port 5432 with a database named finance_tracker_db.
+docker compose up -d
+Local development only: The sample Compose configuration uses example database credentials. Replace them before using the application outside a trusted local environment.
 
-#### 2.1 Configure ExchangeRate-API Key
+3. Configure the backend
+Review Backend/src/main/resources/application.yml and set the database connection, JWT signing secret, and ExchangeRate-API key for your local environment.
 
-The application uses [ExchangeRate-API](https://www.exchangerate-api.com/) for real-time currency conversion.
-
-1. **Get your free API key**:
-   - Visit [https://www.exchangerate-api.com/](https://www.exchangerate-api.com/)
-   - Sign up for a free account
-   - Copy your API key
-
-2. **Update `application.yml`**:
-   - Open `Backend/src/main/resources/application.yml`
-   - Replace the placeholder API key with your own:
-
-```yaml
-exchange-rate:
-  api:
-    base-url: https://v6.exchangerate-api.com/v6
-    api-key: YOUR_API_KEY_HERE  # Replace with your actual API key
-```
-
-#### 2.2 Run the Application
-
-```bash
-# Navigate to the backend directory
+For a production-ready setup, move secrets to environment variables or a secret manager rather than keeping real keys in tracked source files. The currently published configuration should be treated as development-only.
+4. Start the API
+From the repository root:
 cd Backend
-
-# Run the application using Maven
 mvn spring-boot:run
-```
-
-> [!IMPORTANT]
-> Ensure you have JDK 21 and Maven installed. The ExchangeRate-API key is required for currency conversion features to work properly.
-
-### 3. Frontend Setup (React/Vite)
-
-The frontend is a **React** application built with **Vite** and **TailwindCSS**.
-
-```bash
-# Navigate to the frontend directory
+The API is configured to run at http://localhost:8080. Flyway migrations manage the database schema during startup.
+5. Start the frontend
+In a separate terminal, from the repository root:
 cd frontend
-
-# Install dependencies
 npm install
-
-# Start the development server
 npm run dev
-```
+Open the URL printed by Vite (typically http://localhost:5173). Register an account or log in to explore the dashboard.
+If your local backend address differs from http://localhost:8080, update the frontend API configuration in frontend/src/services/api.js to match.
 
----
+📡 API overview
+The backend exposes the following endpoint groups. Except for registration and login, requests are subject to the application's authentication rules.
+Feature	Method	Endpoint	Purpose
+Registration	POST	/api/auth/register	Create a user account
+Login	POST	/api/auth/login	Authenticate and receive a JWT
+Transactions	GET / POST	/api/transactions	List (paginated) / create transactions
+Transaction details	PUT / DELETE	/api/transactions/{id}	Update / delete a transaction
+Currency conversion	GET	/api/transactions/{id}/convert?targetCurrency=USD	Convert a transaction amount
+Categories	GET / POST	/api/categories	List / create categories
+Category archive	DELETE	/api/categories/{id}	Remove a category with history-preserving reassignment
+Dashboard totals	GET	/api/dashboard/stats	Retrieve balance, income and expense summary
+Expense breakdown	GET	/api/dashboard/expense-by-category	Retrieve expenses grouped by category
+Monthly analysis	GET	/api/dashboard/monthly-analysis	Retrieve six-month income/expense analysis
+Preferences	GET / PUT	/api/settings	Read / update user preferences
 
-## 🛠️ Technology Stack
 
-| Layer | Technology |
-| :--- | :--- |
-| **Frontend** | React, Vite, TailwindCSS, Recharts, Lucide Icons |
-| **Backend** | Java 21, Spring Boot 3, Spring Data JPA, Spring Security (JWT), MapStruct |
-| **Database** | PostgreSQL |
-| **DevOps** | Docker, Docker Compose |
+Interactive API documentation is configured at http://localhost:8080/swagger-ui.html. The OpenAPI JSON endpoint is http://localhost:8080/v3/api-docs.
+🔐 Security and data handling
+- JWT-based authentication: The backend uses Spring Security and a JWT authentication filter to protect user-facing data operations.
+- User-specific financial data: The service and repository layers are designed around the current authenticated user.
+- Input validation: Request DTOs are validated using Jakarta Validation.
+- Data integrity: Category removal preserves transaction history through reassignment/archival behavior; Flyway manages schema changes.
+- Secrets: Never commit real API keys, JWT secrets, or production database passwords. Rotate the credentials currently present in the published application.yml and replace hard-coded values with secure configuration before deployment.
+🧪 Development commands
+# Backend tests
+cd Backend
+mvn test
 
----
+# Frontend lint
+cd frontend
+npm run lint
 
-## 🏢 Architecture
+# Frontend production build
+npm run build
 
-The project follows a clean, modular structure:
+# Stop the local database container (from repository root)
+docker compose down
+These commands are available from the project configuration; passing test/build results are not claimed here.
+🗺️ Possible next steps
+Ideas for continued development include automated CI checks, backend integration tests with a disposable PostgreSQL instance, secure environment-based configuration, and additional transaction filtering and reporting. These are improvement ideas, not currently advertised as completed features.
+📄 License
+No root LICENSE file was present in the reviewed GitHub repository. Until a license is added, do not assume third-party reuse rights.
+<div align="center">FinTrack — understand where your money goes.
 
-- **`/Backend`**: Layered architecture (Controller, Service, Repository, Model) with JWT security and centralized exception handling.
-- **`/frontend`**: Component-based React architecture with context-based state management and responsive design.
-- **`docker-compose.yml`**: Orchestrates the PostgreSQL database container.
-
----
-
-### 📄 License
-This project is for educational/demo purposes.
+View source on GitHub
+</div>
